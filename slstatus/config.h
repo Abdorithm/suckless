@@ -74,7 +74,7 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ ram_perc,			" \ue266  %s%% ",       	    NULL			},
 	{ cpu_perc,			"\uf4bc  %s%% | ",		        NULL			},
-    { run_command,      "\U000f0200 %s | ",             eth_cmd         },
+	{ run_command,		"\U000f0200 %s | ",             eth_cmd         },
 	{ wifi_essid,		"\U000f05a9  %s/",		        "wlan0"		    },
 	{ wifi_perc,		"%s%% ",				        "wlan0"		    },
 	{ run_command,		"\uf028  %s",			        volume_cmd      },
