@@ -9,8 +9,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 4;       /* vertical padding of bar */
 static const int sidepad            = 4;       /* horizontal padding of bar */
 static const char *fonts[]          = {
-	"Hack:size=10",
-	"Hack Nerd Font:size=12"
+	"Agave Nerd Font:size=12"
 };
 static const char dmenufont[]       = "Hack:size=10";
 static const char col_gray1[]       = "#1d2021";
