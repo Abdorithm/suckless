@@ -63,19 +63,23 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
+const char volume_cmd[] = "~/.config/suckless/slstatus/scripts/volume";
+const char mic_cmd[] = "~/.config/suckless/slstatus/scripts/mic";
+const char brightness_cmd[] = "~/.config/suckless/slstatus/scripts/brightness";
+const char eth_cmd[] = "~/.config/suckless/slstatus/scripts/ethernet";
+const char bat_cmd[] = "~/.config/suckless/slstatus/scripts/battery";
+const char wifi_cmd[] = "~/.config/suckless/slstatus/scripts/wifi";
+
 static const struct arg args[] = {
 	/* function format          argument */
-	{ ram_perc,			" \ue266  %s%% ",		NULL			},
-	{ cpu_perc,			"\uf4bc  %s%% | ",		NULL			},
-	{ wifi_essid,		"\U000f05a9  %s/",		"wlan0"		},
-	{ wifi_perc,		"%s%% ",				"wlan0"		},
-	{ run_command,		"\uf028  %s",			"amixer | grep 'Front Left: Playback' | cut -d ' ' -f7 | cut -d[ -f2 | cut -d% -f1" },
-	{ run_command,		"%s ",					"amixer | grep 'Front Left: Playback' | cut -d ' ' -f8 | cut -b3" },
-	{ run_command,		"\uf130 %s",			"amixer | grep 'Front Left: Capture' | cut -d ' ' -f7 | cut -d[ -f2 | cut -d% -f1" },
-	{ run_command,		"%s ",					"amixer | grep 'Front Left: Capture' | cut -d ' ' -f8 | cut -b3" },
-	{ battery_perc,		"\U000f0079 %s%%/",		"BAT0"			},
-	{ battery_state,	"%s ",					"BAT0"			},
-	{ run_command,		"\U000F00E0 %s ",		"light | cut -d. -f1" },
-	{ keymap,			"| %s ",				NULL			},
-	{ datetime,			"%s",					"%F %T"			},
+	{ ram_perc,			" \uefc5  %s%% ",		NULL					},
+	{ cpu_perc,			"\uf2db  %s%% |",		NULL					},
+	{ run_command,		"%s",					eth_cmd					},
+	{ run_command,		"%s ",					wifi_cmd				},
+	{ run_command,		"%s",					volume_cmd				},
+	{ run_command,		"%s",					mic_cmd					},
+	{ run_command,		" %s ",					bat_cmd					},
+	{ run_command,		"%s  ",					brightness_cmd			},
+	{ keymap,			"%s | ",				NULL					},
+	{ datetime,			"%s",					"%a, %b %d %Y %H:%M"	},
 };

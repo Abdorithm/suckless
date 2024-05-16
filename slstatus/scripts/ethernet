@@ -1,0 +1,10 @@
+#/usr/bin/env bash
+
+stat="$(ip addr | grep enp3s0 | head -1 | cut -d ' ' -f9)"
+
+if [ $stat == "UP" ]
+then
+	echo -e " \U000f0200  "
+else
+	echo " "
+fi
